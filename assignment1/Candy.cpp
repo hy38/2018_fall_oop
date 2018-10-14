@@ -31,6 +31,8 @@ double Candy::getPrice(){
 void Candy::print(){
   
   dessertItem::print();
+  cout<<fixed;
+  cout.precision(2);
   cout << candyWeight << " pounds @" << pricePerPound << " per pound" << endl;
 } //  end function print
 
