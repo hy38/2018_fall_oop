@@ -39,15 +39,13 @@ bool MyArrayList<T>::addElement(T const &x){
 
     T *temp = new T[capacity * 2];
 
-    for (int i = 0; i < size; i++){ //  ArrayCopy
+    for (int i = 0; i < size; i++){ //  ArrayCopy from mass to temp
       temp[i] = mass[i];
     }
 
-    T *mass = new T[capacity * 2]; //  Duplicate the original arrray
+    delete[] mass;  //  delete memory for previous mass
+    mass = temp;  // mass gets the 'temp'
 
-    for (int i = 0; i < size; i++){ //  ArrayCopy
-      mass[i] = temp[i];
-    }
     capacity = capacity * 2; //  resize
   }
 
