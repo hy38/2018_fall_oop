@@ -18,7 +18,7 @@ void Lizard::readInfo()
 
     try
     {
-        getline(inFile, str, ','); //  Name : Larry : string
+        getline(inFile, str, ','); //  Name : string
         for (int i = 0, count = 0; i < str.length(); i++)
         {
             if (isdigit(str[i]))
@@ -27,7 +27,7 @@ void Lizard::readInfo()
             if (count == str.length())
                 throw "s";
         }
-        Lizard::setName(str); //  name : string
+        Lizard::setName(str);
 
         getline(inFile, str, ','); //  Color : string
         for (int i = 0, count = 0; i < str.length(); i++)
@@ -52,7 +52,6 @@ void Lizard::readInfo()
         Lizard::setHabitat(str);
 
         getline(inFile, str, ','); //  Protected : bool
-
         if (str.compare("TRUE") == 0)
             Lizard::setProtected(true);
         else if (str.compare("FALSE") == 0)
@@ -61,12 +60,11 @@ void Lizard::readInfo()
             throw false;
 
         getline(inFile, str, '\n'); //  Weight : int
-        for (int i = 0; i < str.length() - 1; ++i)
+        for (int i = 0; i < str.length() - 1; i++)
         {
             if (!isdigit(str[i]))
                 throw 0;
         }
-
         Lizard::setWeight(stoi(str));
     }
     catch (char const *expo)
@@ -88,7 +86,7 @@ void Lizard::readInfo()
 }
 void Lizard::printInfo()
 {
-    cout << "Lizard Information: " << endl;
+    cout << "Lizard information: " << endl;
     cout << "Name: " << Lizard::getName() << endl;
     cout << "Color: " << Lizard::getColor() << endl;
     cout << "Habitat: " << Lizard::getHabitat() << endl;

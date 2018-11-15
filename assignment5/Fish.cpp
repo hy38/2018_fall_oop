@@ -18,7 +18,7 @@ void Fish::readInfo()
 
     try
     {
-        getline(inFile, str, ','); //  Name : Nemo : string
+        getline(inFile, str, ','); //  Name : string
         for (int i = 0, count = 0; i < str.length(); i++)
         {
             if (isdigit(str[i]))
@@ -27,7 +27,7 @@ void Fish::readInfo()
             if (count == str.length())
                 throw "s";
         }
-        Fish::setName(str); //  name : string
+        Fish::setName(str);
 
         getline(inFile, str, ','); //  Color : string
         for (int i = 0, count = 0; i < str.length(); i++)
@@ -41,7 +41,6 @@ void Fish::readInfo()
         Fish::setColor(str);
 
         getline(inFile, str, ','); //  Freshwater : bool
-
         if (str.compare("TRUE") == 0)
             Fish::setFreshwater(true);
         else if (str.compare("FALSE") == 0)
@@ -61,7 +60,6 @@ void Fish::readInfo()
         Fish::setHabitat(str);
 
         getline(inFile, str, '\n'); //  Predator : bool
-
         if (str.compare("TRUE") == 0)
             Fish::setPredator(true);
         else if (str.compare("FALSE") == 0)

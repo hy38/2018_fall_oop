@@ -18,7 +18,7 @@ void Monkey::readInfo()
 
     try
     {
-        getline(inFile, str, ','); //  Name : Larry : string
+        getline(inFile, str, ','); //  Name : string
         for (int i = 0, count = 0; i < str.length(); i++)
         {
             if (isdigit(str[i]))
@@ -27,7 +27,7 @@ void Monkey::readInfo()
             if (count == str.length())
                 throw "s";
         }
-        Monkey::setName(str); //  name : string
+        Monkey::setName(str);
 
         getline(inFile, str, ','); //  Color : string
         for (int i = 0, count = 0; i < str.length(); i++)
@@ -41,7 +41,7 @@ void Monkey::readInfo()
         Monkey::setColor(str);
 
         getline(inFile, str, ','); //  Age : int
-        for (int i = 0; i < str.length() - 1; ++i)
+        for (int i = 0; i < str.length() - 1; i++)
         {
             if (!isdigit(str[i]))
                 throw 0;
@@ -49,7 +49,6 @@ void Monkey::readInfo()
         Monkey::setAge(stoi(str));
 
         getline(inFile, str, ','); //  Wild : bool
-
         if (str.compare("TRUE") == 0)
             Monkey::setWild(true);
         else if (str.compare("FALSE") == 0)
@@ -69,7 +68,6 @@ void Monkey::readInfo()
         Monkey::setHome(str);
 
         getline(inFile, str, '\n'); //  Endangered : bool
-
         if (str.compare("TRUE") == 0)
             Monkey::setEndangered(true);
         else if (str.compare("FALSE") == 0)

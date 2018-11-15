@@ -18,7 +18,7 @@ void Horse::readInfo()
 
     try
     {
-        getline(inFile, str, ','); //  Name : Seabiscuit : string
+        getline(inFile, str, ','); //  Name : string
         for (int i = 0, count = 0; i < str.length(); i++)
         {
             if (isdigit(str[i]))
@@ -27,7 +27,7 @@ void Horse::readInfo()
             if (count == str.length())
                 throw "s";
         }
-        Horse::setName(str); //  name : string
+        Horse::setName(str);
 
         getline(inFile, str, ','); //  Color : string
         for (int i = 0, count = 0; i < str.length(); i++)
@@ -52,8 +52,7 @@ void Horse::readInfo()
         Horse::setManeColor(str);
 
         getline(inFile, str, ','); //  Age : int
-        for (int i = 0; i < str.length(); ++i)
-
+        for (int i = 0; i < str.length(); i++)
         {
             if (!isdigit(str[i]))
                 throw 0;
@@ -67,6 +66,7 @@ void Horse::readInfo()
                 throw 0;
         }
         Horse::setHeight(stoi(str));
+
         Horse::addOne(); //  height += 1
     }
     catch (char const *expn)

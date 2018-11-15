@@ -18,9 +18,7 @@ void Dog::readInfo()
 
     try
     {
-        getline(inFile, str, ','); //  Name : Buddy : string
-                                   //       if (strcmp(typeid(str).name(), "Ss"))
-                                   //            throw typeid(str).name();
+        getline(inFile, str, ','); //  Name : string
         for (int i = 0, count = 0; i < str.length(); i++)
         {
             if (isdigit(str[i]))
@@ -29,8 +27,7 @@ void Dog::readInfo()
             if (count == str.length())
                 throw "s";
         }
-        Dog::setName(str); //  name : string
-        // Animal::setName(str);
+        Dog::setName(str);
 
         getline(inFile, str, ','); //  Breed : string
         for (int i = 0, count = 0; i < str.length(); i++)
@@ -44,8 +41,7 @@ void Dog::readInfo()
         Dog::setBreed(str);
 
         getline(inFile, str, ','); //  Age : int
-        // Dog::age = stoi(str);
-        for (int i = 0; i < str.length(); ++i)
+        for (int i = 0; i < str.length(); i++)
         {
             if (!isdigit(str[i]))
                 throw 0;
@@ -64,14 +60,12 @@ void Dog::readInfo()
         Dog::setColor(str);
 
         getline(inFile, str, '\n'); //  Weight : int
-        for (int i = 0; i < str.length(); ++i)
+        for (int i = 0; i < str.length(); i++)
         {
             if (!isdigit(str[i]))
                 throw 0;
         }
-
         Dog::setWeight(stoi(str));
-        // Dog::weight = stoi(str);
     }
     catch (int expn)
     {
@@ -79,8 +73,8 @@ void Dog::readInfo()
         exit(0);
     }
     catch (char const *expn)
-    { /* expn use error*/
-        cout << "MyError : type must be 'string' " /* not " << char*/ << endl;
+    {
+        cout << "MyError : type must be 'string' " << endl;
         exit(0);
     }
     inFile.close();
