@@ -66,13 +66,11 @@ void Horse::readInfo()
                 throw 0;
         }
         Horse::setHeight(stoi(str));
-
-        Horse::addOne(); //  height += 1
     }
     catch (char const *expn)
     {
         cout << "MyError : type must be 'string'" << endl;
-        // exit(0);
+        exit(0);
     }
     catch (int expn)
     {

@@ -17,6 +17,7 @@ int main(){
 
     Horse horsey;
     horsey.readInfo();
+    horsey.addOne();
     horsey.printInfo();
     cout << endl;
 
