@@ -91,5 +91,6 @@ void Dog::printInfo()
 }
 void Dog::subtractTen()
 {
-    Dog::weight -= 10;
+    if(Dog::weight > 10)    //  as long as weight > 10
+        Dog::weight -= 10;
 }
