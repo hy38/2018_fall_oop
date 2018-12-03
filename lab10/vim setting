@@ -1,0 +1,20 @@
+source functions.vim
+
+
+set number
+set ignorecase
+
+nnoremap <F2> :w
+
+
+function! ToggleNumber()
+    if(&relativenumber == 1)
+        set norelativenumber
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
+
+command! ToHtml :so $VIMRUNTIME/syntax/2html.vim
+command! Ncd :cd %:p:h
